@@ -63,6 +63,25 @@ class _ListScreenState extends State<ListScreen> {
                 ),
               ),
               SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 15,
+                    itemBuilder: ((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            height: MediaQuery.of(context).size.width / 20,
+                            width: MediaQuery.of(context).size.width / 20,
+                            decoration: BoxDecoration(
+                              color:
+                                  (index % 2 == 0) ? Colors.red : Colors.black,
+                            )),
+                      );
+                    })),
+              ),
+              SizedBox(
                 height: 5,
               ),
               Card(
@@ -74,6 +93,26 @@ class _ListScreenState extends State<ListScreen> {
                     Text('${widget.second[index].name}'),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 30,
+                    itemBuilder: ((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            height: MediaQuery.of(context).size.width / 20,
+                            width: MediaQuery.of(context).size.width / 20,
+                            decoration: BoxDecoration(
+                              color: (index % 2 == 0)
+                                  ? Colors.yellow
+                                  : Colors.orange,
+                            )),
+                      );
+                    })),
               ),
             ],
           ),
